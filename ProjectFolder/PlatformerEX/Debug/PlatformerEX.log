@@ -1,0 +1,31 @@
+﻿  Initialize.cpp
+C:\Users\Master\Desktop\PlatformerEX\PlatformerEX\Player\Player.h(30,24): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
+  Player.cpp
+C:\Users\Master\Desktop\PlatformerEX\PlatformerEX\Player\Player.h(30,24): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
+  GrassGround.cpp
+C:\Users\Master\Desktop\PlatformerEX\PlatformerEX\Player\Player.h(30,24): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
+  Ground.cpp
+C:\Users\Master\Desktop\PlatformerEX\PlatformerEX\Player\Player.h(30,24): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
+C:\Users\Master\Desktop\PlatformerEX\PlatformerEX\Tile\Ground.cpp(8,83): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Water.cpp
+C:\Users\Master\Desktop\PlatformerEX\PlatformerEX\Player\Player.h(30,24): warning C4305: '초기화 중': 'double'에서 'const float'(으)로 잘립니다.
+  코드를 생성하고 있습니다...
+Initialize.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: virtual void __thiscall GameScreen::Start(void)" (?Start@GameScreen@@UAEXXZ)
+Initialize.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: virtual void __thiscall GameScreen::Update(void)" (?Update@GameScreen@@UAEXXZ)
+Initialize.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: virtual void __thiscall GameScreen::End(void)" (?End@GameScreen@@UAEXXZ)
+Player.obj : error LNK2019: "public: void __thiscall Engine::Rendering::Animation::Component::Render(void)" (?Render@Component@Animation@Rendering@Engine@@QAEXXZ)"public: void __thiscall player::Update(void)" (?Update@player@@QAEXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+Player.obj : error LNK2019: "public: __thiscall Point::Point(float,float)" (??0Point@@QAE@MM@Z)"public: __thiscall player::player(void)" (??0player@@QAE@XZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+GrassGround.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Point::Point(float,float)" (??0Point@@QAE@MM@Z)
+Water.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Point::Point(float,float)" (??0Point@@QAE@MM@Z)
+Player.obj : error LNK2019: "bool __cdecl Engine::Input::Get::Key::Press(unsigned short)" (?Press@Key@Get@Input@Engine@@YA_NG@Z)"public: void __thiscall player::stateManager(void)" (?stateManager@player@@QAEXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+Player.obj : error LNK2019: "bool __cdecl Engine::Input::Get::Key::Down(unsigned short)" (?Down@Key@Get@Input@Engine@@YA_NG@Z)"public: void __thiscall player::stateManager(void)" (?stateManager@player@@QAEXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+Player.obj : error LNK2019: "float __cdecl Engine::Time::Get::Delta(void)" (?Delta@Get@Time@Engine@@YAMXZ)"public: void __thiscall player::moveManager(float)" (?moveManager@player@@QAEXM@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+Player.obj : error LNK2019: "public: __thiscall Engine::Physics::Component<class Quadrangle>::Component<class Quadrangle>(void)" (??0?$Component@VQuadrangle@@@Physics@Engine@@QAE@XZ)"public: __thiscall player::player(void)" (??0player@@QAE@XZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+GrassGround.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Engine::Physics::Component<class Quadrangle>::Component<class Quadrangle>(void)" (??0?$Component@VQuadrangle@@@Physics@Engine@@QAE@XZ)
+Water.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Engine::Physics::Component<class Quadrangle>::Component<class Quadrangle>(void)" (??0?$Component@VQuadrangle@@@Physics@Engine@@QAE@XZ)
+Ground.obj : error LNK2019: "public: void __thiscall Engine::Rendering::Image::Component::Render(void)" (?Render@Component@Image@Rendering@Engine@@QAEXXZ)"public: virtual void __thiscall Ground::update(class player * const)" (?update@Ground@@UAEXQAVplayer@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+Ground.obj : error LNK2019: "public: bool __thiscall Engine::Physics::Component<class Quadrangle>::Collide<class Quadrangle>(class Engine::Physics::Component<class Quadrangle> const &)const " (??$Collide@VQuadrangle@@@?$Component@VQuadrangle@@@Physics@Engine@@QBE_NABV012@@Z)"public: virtual void __thiscall Ground::meetPlayer(class player * const)" (?meetPlayer@Ground@@UAEXQAVplayer@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: _WinMain@16"int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+Engine.lib : warning LNK4272: 'x64' 라이브러리 컴퓨터 종류가 'x86' 대상 컴퓨터 종류와 충돌합니다.
+FreeImage.lib : warning LNK4272: 'x64' 라이브러리 컴퓨터 종류가 'x86' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\Master\Desktop\PlatformerEX\Debug\PlatformerEX.exe : fatal error LNK1120: 12개의 확인할 수 없는 외부 참조입니다.
