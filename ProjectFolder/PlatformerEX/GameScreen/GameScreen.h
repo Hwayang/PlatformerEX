@@ -20,9 +20,10 @@ private:
     GrassGround GrassGround;
     /*Water WaterArea;*/
     
-
     Engine::Rendering::Camera Camera;
 
     Engine::Rendering::Text::Component WorldTime;
     Engine::Rendering::Text::Component DeltaTime;
+
+
 };
