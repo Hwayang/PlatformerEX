@@ -13,8 +13,6 @@ GrassGround::GrassGround()
 
 void GrassGround::setTile(float X, float Y)
 {
-	tileSkin.Location = { X, Y };
-	bodySkin.Location = {};
+	tileSkin.Location = bodySkin.Location = { X, Y };
 	Body.Center = { X, Y };
-
 }

@@ -1,23 +1,23 @@
 #pragma once
 
-#include <algorithm>
-
 #include "../Engine/Physics.h"
 #include "../Engine/Rendering.h"
 #include "../Engine/Quadrangle.h"
 #include "../Engine/Input.h"
 #include "../Engine/Time.h"
 
+class Tile;
 class player
 {
 public:
 	player();
 	void stateChange();
 	void move(float const direction);
-	void jump();
+	void jump(Tile* target);
 	void Update();
 
 	Engine::Physics::Component<Quadrangle>& getBody();
+	Engine::Rendering::Animation::Component& getSkin();
 
 private:
 	float weight = 50.f;

@@ -1,25 +1,25 @@
 #include "Tile.h"
 
-Water::Water()
+Obstacle::Obstacle()
 {
-	tileSkin.Name = "Image/Tile_Water";
+	tileSkin.Name = "Image/Tile_Obstacle";
 	tileSkin.Length = { 16,16 };
 
 	Body.Length = { 16,16 };
 }
 
-void Water::meetPlayer(player* const target)
+bool Obstacle::meetPlayer(player* const target)
 {
-
+	return false;
 }
 
-void Water::setTile(float X, float Y)
+void Obstacle::setTile(float X, float Y)
 {
 
 	tileSkin.Location = { X, Y };
 }
 
-void Water::update(player* const target)
+void Obstacle::update(player* const target)
 {
 }
 

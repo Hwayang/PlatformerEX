@@ -1,18 +1,22 @@
 #include "Tile.h"
+#include "../Player/Player.h"
 
-void Ground::meetPlayer(player* const target)
+bool Ground::meetPlayer(player* const target)
 {
 	if (Body.Collide(target->getBody()))
 	{
-		this->tileSkin.Name = "Image/RBB";
 		target->getBody().Center.y = this->Body.Center.y + (this->Body.Length.y * 0.5f) + (target->getBody().Length.y * 0.5);
+		target->getSkin().Location[1] = this->Body.Center.y + (this->Body.Length.y * 0.5f) + (target->getSkin().Length[1] * 0.5);
+		return true;
 	}
+
+	return false;
 }
 
 void Ground::update(player* const target)
 {
+	/*GrassGround.*/
 	meetPlayer(target);
-
 	tileSkin.Render();
 	/*bodySkin.Render();*/
 }

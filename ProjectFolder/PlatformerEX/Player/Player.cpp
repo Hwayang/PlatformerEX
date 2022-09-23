@@ -1,14 +1,17 @@
+#include <algorithm>
+
 #include "Player.h"
+#include "../Tile/Tile.h"
 
 player::player()
 {
-	Skin.Length = { 480, 320 };
+	Skin.Length = { 144, 96 };
 	Skin.Location = { 0, 0 };
 	Skin.Duration = 0.5f;
 	Skin.Repeatable = true;
 	Skin.Flipped = false;
 
-	Body.Length = { 480, 320 };
+	Body.Length = { 144, 96 };
 	Body.Center = { 0,0 };
 }
 
@@ -81,7 +84,7 @@ void player::move(float const direction)
 
 	if (!(state == state_::STATE_JUMP))
 	{
-		/*Body.Center.y = Skin.Location[1] -= weight * Engine::Time::Get::Delta();*/
+		Body.Center.y = Skin.Location[1] -= gravity / 25 * Engine::Time::Get::Delta();
 	}
 	else if (state == state_::STATE_JUMP)
 	{
@@ -89,18 +92,25 @@ void player::move(float const direction)
 	}
 }
 
-void player::jump()
+void player::jump(Tile* target)
 {
+	/*
+		TODO
+		1. 플레이어가 누른 시간에 비례하여 점프력 증가(최대 1.5초)
+		2.
+	*/
+
 	if (!(state == state_::STATE_JUMP))
 	{
 		return;
 	}
 
-	/*
-		TODO
-		1. 플레이어가 누른 시간에 비례하여 점프력 증가(최대 1.5초)
-		2. 
-	*/
+	if (target->meetPlayer(this) == true)
+	{
+		jumpPower = 0;
+		isJump = false;
+		return;
+	}
 
 	jumpPower -= gravity * Engine::Time::Get::Delta();
 }
@@ -114,4 +124,9 @@ void player::Update()
 Engine::Physics::Component<Quadrangle>& player::getBody()
 {
 	return this->Body;
+}
+
+Engine::Rendering::Animation::Component& player::getSkin()
+{
+	return this->Skin;
 }
