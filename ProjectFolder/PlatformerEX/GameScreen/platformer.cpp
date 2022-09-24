@@ -12,15 +12,16 @@ void GameScreen::Update()
 
 	Camera.Set();
 
-	GrassGround.setTile(0,0);
-	GrassGround.update(&PC);
+	grassground.setTile(0,0);
+	grassground.update(&PC);
 
 	Vector<2> direction{};
 	if (Engine::Input::Get::Key::Press(VK_LEFT))  direction[0] -= 1;
 	if (Engine::Input::Get::Key::Press(VK_RIGHT)) direction[0] += 1;
 
+
 	PC.stateChange();
-	PC.jump(&GrassGround);
+	PC.jump(&grassground);
 	PC.move(direction[0]);
 
 	PC.Update();

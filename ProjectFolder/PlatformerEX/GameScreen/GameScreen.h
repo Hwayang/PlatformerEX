@@ -4,6 +4,7 @@
 
 #include "../Player/Player.h"
 #include "../Tile/Tile.h"
+#include "../TileGroup/TileGroup.h"
 
 #include "../Engine/Game.h"
 #include "../Engine/Rendering.h"
@@ -17,13 +18,10 @@ public:
 
 private:
     player PC;
-    GrassGround GrassGround;
-    /*Water WaterArea;*/
-    
+    TileGroup stage;
+    GrassGround grassground;
     Engine::Rendering::Camera Camera;
 
     Engine::Rendering::Text::Component WorldTime;
     Engine::Rendering::Text::Component DeltaTime;
-
-
 };

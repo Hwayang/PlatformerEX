@@ -5,13 +5,13 @@
 
 player::player()
 {
-	Skin.Length = { 144, 96 };
+	Skin.Length = { 270, 180 };
 	Skin.Location = { 0, 0 };
 	Skin.Duration = 0.5f;
 	Skin.Repeatable = true;
 	Skin.Flipped = false;
 
-	Body.Length = { 144, 96 };
+	Body.Length = { 270, 180 };
 	Body.Center = { 0,0 };
 }
 
@@ -32,7 +32,7 @@ void player::stateChange()
 		Skin.Flipped = false;
 	}
 
-	//점프 상태가 아니고, X키를눌렀을 때
+	//점프 상태가 아니고, X키를눌렀을 때 점프 상태가 될 수 있도록
 	if (isJump != true and Engine::Input::Get::Key::Down('X'))
 	{
 		isJump = true;
@@ -84,7 +84,7 @@ void player::move(float const direction)
 
 	if (!(state == state_::STATE_JUMP))
 	{
-		Body.Center.y = Skin.Location[1] -= gravity / 25 * Engine::Time::Get::Delta();
+		Body.Center.y = Skin.Location[1] -= gravity / 5000000;
 	}
 	else if (state == state_::STATE_JUMP)
 	{
@@ -100,14 +100,14 @@ void player::jump(Tile* target)
 		2.
 	*/
 
-	if (!(state == state_::STATE_JUMP))
+	if (!(state == state_::STATE_JUMP) and !(state==state_::STATE_FALLEN))
 	{
 		return;
 	}
 
 	if (target->meetPlayer(this) == true)
 	{
-		jumpPower = 0;
+		jumpPower = 2500.f;
 		isJump = false;
 		return;
 	}
