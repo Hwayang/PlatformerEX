@@ -3,10 +3,10 @@
 GrassGround::GrassGround()
 {
 	tileSkin.Name = "Image/Tile_GrassGround";
-	tileSkin.Length = { 100,100 };
+	tileSkin.Length = { 300,100 };
 
 	bodySkin.Name = "Image/Tile_GBC";
-	bodySkin.Length = { 100,100 };
+	bodySkin.Length = { 300,100 };
 
 	Body.Length = { 100,100 };
 }

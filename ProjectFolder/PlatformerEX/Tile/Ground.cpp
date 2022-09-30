@@ -15,8 +15,7 @@ bool Ground::meetPlayer(player* const target)
 
 void Ground::update(player* const target)
 {
-	/*GrassGround.*/
+	/*tileSkin.Location[1] = Body.Center.y -= 100;*/
 	meetPlayer(target);
 	tileSkin.Render();
-	/*bodySkin.Render();*/
 }

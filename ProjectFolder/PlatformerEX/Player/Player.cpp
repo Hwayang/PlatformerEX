@@ -33,7 +33,7 @@ void player::stateChange()
 	}
 
 	//점프 상태가 아니고, X키를눌렀을 때 점프 상태가 될 수 있도록
-	if (isJump != true and Engine::Input::Get::Key::Down('X'))
+	if (isJump != true and Engine::Input::Get::Key::Press('X'))
 	{
 		isJump = true;
 	}
@@ -82,13 +82,13 @@ void player::move(float const direction)
 
 	Body.Center.x = Skin.Location[0] = std::clamp(Skin.Location[0] + direction * moveSpeed * Engine::Time::Get::Delta(), -boundary[0], boundary[0]);
 
-	if (!(state == state_::STATE_JUMP))
-	{
-		Body.Center.y = Skin.Location[1] -= gravity / 5000000;
-	}
-	else if (state == state_::STATE_JUMP)
+	if (state == state_::STATE_JUMP)
 	{
 		Body.Center.y = Skin.Location[1] += jumpPower * Engine::Time::Get::Delta();
+	}
+	else if (state != state_::STATE_JUMP)
+	{
+		Body.Center.y = Skin.Location[1] -= gravity / 50000;
 	}
 }
 
@@ -112,7 +112,7 @@ void player::jump(Tile* target)
 		return;
 	}
 
-	jumpPower -= gravity * Engine::Time::Get::Delta();
+	A = jumpPower -= gravity * Engine::Time::Get::Delta();
 }
 
 

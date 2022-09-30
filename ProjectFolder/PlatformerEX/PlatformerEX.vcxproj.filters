@@ -60,9 +60,6 @@
     <ClInclude Include="Gravity\gravity.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="TileGroup\TileGroup.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player\Player.cpp">
@@ -84,9 +81,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Gravity\gravity.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TileGroup\TileGroup.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

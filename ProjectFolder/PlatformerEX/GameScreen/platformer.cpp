@@ -19,11 +19,17 @@ void GameScreen::Update()
 	if (Engine::Input::Get::Key::Press(VK_LEFT))  direction[0] -= 1;
 	if (Engine::Input::Get::Key::Press(VK_RIGHT)) direction[0] += 1;
 
-
 	PC.stateChange();
-	PC.jump(&grassground);
-	PC.move(direction[0]);
 
+	std::vector<Tile*>::iterator i = tileContainer.begin();
+	while (i != tileContainer.end())
+	{
+		PC.jump(*i);
+	}
+
+	PC.jump(&grassground);
+
+	PC.move(direction[0]);
 	PC.Update();
 }
 
