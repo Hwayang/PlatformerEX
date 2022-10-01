@@ -18,8 +18,10 @@ public:
 
 	Engine::Physics::Component<Quadrangle>& getBody();
 	Engine::Rendering::Animation::Component& getSkin();
+	int getState();
 
 	bool isGround = true;
+	bool gamestart = false;
 
 private:
 	float weight = 50.f;

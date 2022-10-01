@@ -5,7 +5,7 @@ std::vector<Tile*> GameScreen::tileContainer;
 
 void GameScreen::Start()
 {
-	Camera.Sight = { 1280, 720 };
+	Camera.Sight = { 1280 * 2, 720 * 2 };
 
 	playScreen.Name = "Image/Tile_GrassLongGround";
 	playScreen.Location = { 0,0 };
@@ -30,22 +30,20 @@ void GameScreen::Update()
 	Camera.Sight[1] += 9 * 4 * -Engine::Input::Get::Wheel::V();
 
 	Camera.Set();
-	/*playScreen.Render();*/
 
 	worldTime = (int)Engine::Time::Get::Elapsed();
 
-	if (worldTime / spawnTime * spawnCount == 1)
+	if (worldTime - (spawnTime * spawnCount) >= 0)
 	{
 		tileContainer.push_back(spawner->Spawn());
 		spawnCount++;
 	}
 
-
 	Vector<2> direction{};
 	if (Engine::Input::Get::Key::Press(VK_LEFT))  direction[0] -= 1;
 	if (Engine::Input::Get::Key::Press(VK_RIGHT)) direction[0] += 1;
 
-	//PC.stateChange();
+	PC.stateChange();
 
 	std::vector<Tile*>::iterator i = tileContainer.begin();
 	while (i != tileContainer.end())
@@ -53,7 +51,6 @@ void GameScreen::Update()
 		if ((**i).update(&PC) != true)
 		{
 			delete(*i);
-
 			i = tileContainer.erase(i);
 
 			worldscore++;
@@ -64,18 +61,19 @@ void GameScreen::Update()
 		}
 	}
 
-	//PC.jump();
+	PC.jump();
 
-	//PC.move(direction[0]);
-	//PC.Update();
-	std::string world = "지난 시간 : " + std::to_string(worldTime) + "초";
-	std::string score = "점수 : " + std::to_string(this->worldscore);
+	PC.move(direction[0]);
+	PC.Update();
+	std::string world = "Time : " + std::to_string(worldTime) + "초";
+	std::string score = "Score : " + std::to_string(this->worldscore);
 
 	WorldTime.Text = world.data();
 	ScoreText.Text = score.data();
 
 	WorldTime.Render();
 	ScoreText.Render();
+	/*playScreen.Render();*/
 }
 
 void GameScreen::End()

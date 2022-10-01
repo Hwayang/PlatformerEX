@@ -154,14 +154,12 @@
     <ClInclude Include="Engine\Time.h" />
     <ClInclude Include="Engine\Vector.h" />
     <ClInclude Include="GameScreen\GameScreen.h" />
-    <ClInclude Include="Gravity\gravity.h" />
     <ClInclude Include="Player\Player.h" />
     <ClInclude Include="Spawner\Spawner.h" />
     <ClInclude Include="Tile\Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameScreen\platformer.cpp" />
-    <ClCompile Include="Gravity\gravity.cpp" />
     <ClCompile Include="Initialize.cpp" />
     <ClCompile Include="Player\Player.cpp" />
     <ClCompile Include="Spawner\Spawner.cpp" />

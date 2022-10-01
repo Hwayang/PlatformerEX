@@ -6,7 +6,7 @@
 player::player()
 {
 	Skin.Length = { 270, 180 };
-	Skin.Location = { 0, -100 };
+	Skin.Location = { 0, 0 };
 	Skin.Duration = 0.5f;
 	Skin.Repeatable = true;
 	Skin.Flipped = false;
@@ -37,6 +37,7 @@ void player::stateChange()
 	{
 		isJump = true;
 		isGround = false;
+		gamestart = true;
 	}
 
 	//각 상태 변경 조건에 맞게 상태를 바꿔주는 코드
@@ -87,9 +88,9 @@ void player::move(float const direction)
 	{
 		Body.Center.y = Skin.Location[1] += jumpPower * Engine::Time::Get::Delta();
 	}
-	else if (state != state_::STATE_JUMP)
+	else if (state != state_::STATE_JUMP and gamestart == true)
 	{
-		Body.Center.y = Skin.Location[1] -= gravity / 50000;
+		Body.Center.y = Skin.Location[1] -= gravity / 100 * Engine::Time::Get::Delta();
 	}
 }
 
@@ -100,12 +101,12 @@ void player::jump()
 		1. 플레이어가 누른 시간에 비례하여 점프력 증가(최대 1.5초)
 	*/
 
-	jumpPower -= 700 * Engine::Time::Get::Delta();
-
 	if (state != state_::STATE_JUMP and state != state_::STATE_FALLEN)
 	{
 		return;
 	}
+
+	jumpPower -= 8000 * Engine::Time::Get::Delta();
 
 	if (isGround == true)
 	{
@@ -114,7 +115,6 @@ void player::jump()
 		return;
 	}
 }
-
 
 void player::Update()
 {
@@ -129,4 +129,9 @@ Engine::Physics::Component<Quadrangle>& player::getBody()
 Engine::Rendering::Animation::Component& player::getSkin()
 {
 	return this->Skin;
+}
+
+int player::getState()
+{
+	return (int)state;
 }

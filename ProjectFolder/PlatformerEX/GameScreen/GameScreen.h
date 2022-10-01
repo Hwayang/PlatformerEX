@@ -21,7 +21,7 @@ private:
 
 private:
     int worldscore = 0;
-    int spawnTime = 3;
+    int spawnTime = 4;
     int spawnCount = 1;
 
     int worldTime = 0;
