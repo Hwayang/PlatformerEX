@@ -13,11 +13,13 @@ public:
 	player();
 	void stateChange();
 	void move(float const direction);
-	void jump(Tile* target);
+	void jump();
 	void Update();
 
 	Engine::Physics::Component<Quadrangle>& getBody();
 	Engine::Rendering::Animation::Component& getSkin();
+
+	bool isGround = true;
 
 private:
 	float weight = 50.f;
@@ -25,7 +27,6 @@ private:
 
 	float const gravity = 9800.f/*1000px : 1m*/;
 	float jumpPower = 2500.f;
-	float A;
 
 	bool isJump = false;
 

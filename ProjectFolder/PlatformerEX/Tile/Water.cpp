@@ -13,13 +13,3 @@ bool Obstacle::meetPlayer(player* const target)
 	return false;
 }
 
-void Obstacle::setTile(float X, float Y)
-{
-
-	tileSkin.Location = { X, Y };
-}
-
-void Obstacle::update(player* const target)
-{
-}
-

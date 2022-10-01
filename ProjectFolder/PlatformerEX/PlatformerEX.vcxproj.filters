@@ -60,12 +60,15 @@
     <ClInclude Include="Gravity\gravity.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Spawner\Spawner.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player\Player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Tile\GrassGround.cpp">
+    <ClCompile Include="Tile\LongGround.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Tile\Ground.cpp">
@@ -81,6 +84,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Gravity\gravity.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile\Tile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Spawner\Spawner.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

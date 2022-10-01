@@ -156,6 +156,7 @@
     <ClInclude Include="GameScreen\GameScreen.h" />
     <ClInclude Include="Gravity\gravity.h" />
     <ClInclude Include="Player\Player.h" />
+    <ClInclude Include="Spawner\Spawner.h" />
     <ClInclude Include="Tile\Tile.h" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +164,9 @@
     <ClCompile Include="Gravity\gravity.cpp" />
     <ClCompile Include="Initialize.cpp" />
     <ClCompile Include="Player\Player.cpp" />
-    <ClCompile Include="Tile\GrassGround.cpp" />
+    <ClCompile Include="Spawner\Spawner.cpp" />
+    <ClCompile Include="Tile\Tile.cpp" />
+    <ClCompile Include="Tile\LongGround.cpp" />
     <ClCompile Include="Tile\Ground.cpp" />
     <ClCompile Include="Tile\Water.cpp" />
   </ItemGroup>

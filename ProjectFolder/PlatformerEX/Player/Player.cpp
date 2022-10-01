@@ -6,7 +6,7 @@
 player::player()
 {
 	Skin.Length = { 270, 180 };
-	Skin.Location = { 0, 0 };
+	Skin.Location = { 0, -100 };
 	Skin.Duration = 0.5f;
 	Skin.Repeatable = true;
 	Skin.Flipped = false;
@@ -36,6 +36,7 @@ void player::stateChange()
 	if (isJump != true and Engine::Input::Get::Key::Press('X'))
 	{
 		isJump = true;
+		isGround = false;
 	}
 
 	//각 상태 변경 조건에 맞게 상태를 바꿔주는 코드
@@ -92,27 +93,26 @@ void player::move(float const direction)
 	}
 }
 
-void player::jump(Tile* target)
+void player::jump()
 {
 	/*
 		TODO
 		1. 플레이어가 누른 시간에 비례하여 점프력 증가(최대 1.5초)
-		2.
 	*/
 
-	if (!(state == state_::STATE_JUMP) and !(state==state_::STATE_FALLEN))
+	jumpPower -= 700 * Engine::Time::Get::Delta();
+
+	if (state != state_::STATE_JUMP and state != state_::STATE_FALLEN)
 	{
 		return;
 	}
 
-	if (target->meetPlayer(this) == true)
+	if (isGround == true)
 	{
 		jumpPower = 2500.f;
 		isJump = false;
 		return;
 	}
-
-	A = jumpPower -= gravity * Engine::Time::Get::Delta();
 }
 
 
