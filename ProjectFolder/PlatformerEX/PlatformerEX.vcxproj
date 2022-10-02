@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ImageSpawner\ImageSpawner.h" />
     <ClInclude Include="Engine\Circle.h" />
     <ClInclude Include="Engine\Game.h" />
     <ClInclude Include="Engine\Initialize.h" />
@@ -154,15 +155,20 @@
     <ClInclude Include="Engine\Time.h" />
     <ClInclude Include="Engine\Vector.h" />
     <ClInclude Include="GameScreen\GameScreen.h" />
+    <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Player\Player.h" />
-    <ClInclude Include="Spawner\Spawner.h" />
+    <ClInclude Include="TileSpawner\TileSpawner.h" />
     <ClInclude Include="Tile\Tile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ImageSpawner\ImageSpawner.cpp" />
     <ClCompile Include="GameScreen\platformer.cpp" />
+    <ClCompile Include="Image\Image.cpp" />
+    <ClCompile Include="Image\SkyImage.cpp" />
+    <ClCompile Include="Image\TowerImage.cpp" />
     <ClCompile Include="Initialize.cpp" />
     <ClCompile Include="Player\Player.cpp" />
-    <ClCompile Include="Spawner\Spawner.cpp" />
+    <ClCompile Include="TileSpawner\TileSpawner.cpp" />
     <ClCompile Include="Tile\Tile.cpp" />
     <ClCompile Include="Tile\LongGround.cpp" />
     <ClCompile Include="Tile\Ground.cpp" />

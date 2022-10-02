@@ -6,7 +6,7 @@ bool Ground::meetPlayer(player* const target)
 	if (Body.Collide(target->getBody()))
 	{
 		if (target->getState() == 1)
-			if(target->getBody().Center.y - target->getSkin().Length[1] / 2 - this->Body.Center.y + (this->Body.Length.y * 0.5f) >= 0 )
+			if(target->getBody().Center.y - target->getBody().Length.y / 2 - this->Body.Center.y + (this->Body.Length.y * 0.5f) <= 0 )
 				target->isGround = true;
 
 		if(target->isGround == true and target->gamestart == true)
@@ -14,6 +14,10 @@ bool Ground::meetPlayer(player* const target)
 		
 		return true;
 	}
+	else
+	{
+		/*target->isGround = false;*/
+		return false;
+	}
 
-	return false;
 }

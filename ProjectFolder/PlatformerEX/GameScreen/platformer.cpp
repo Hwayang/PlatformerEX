@@ -2,14 +2,15 @@
 #include <string>
 
 std::vector<Tile*> GameScreen::tileContainer;
+std::vector<Image*> GameScreen::imageContainer;
 
 void GameScreen::Start()
 {
-	Camera.Sight = { 1280 * 2, 720 * 2 };
+	Camera.Sight = { 1280, 720 };
 
-	playScreen.Name = "Image/Tile_GrassLongGround";
-	playScreen.Location = { 0,0 };
-	playScreen.Length = { 640,720 };
+	GameOver.Name = "Image/YOU DIED";
+	GameOver.Location = { 0,0 };
+	GameOver.Length = { 1280,720 };
 
 	WorldTime.Font.Name = "³ª´®¼Õ±Û¾¾ º×";
 	WorldTime.Font.Size = 48;
@@ -21,21 +22,35 @@ void GameScreen::Start()
 	ScoreText = WorldTime;
 	ScoreText.Location[1] += 50;
 
-	spawner = new Spawner(Add);
+	imageSpawner = new ImageSpawner(Add);
+	tileSpawner = new TileSpawner(Add);
+
+	imageContainer.push_back(imageSpawner->Spawn());
 }
 
 void GameScreen::Update()
 {
-	Camera.Sight[0] += 16 * 4 * -Engine::Input::Get::Wheel::V();
-	Camera.Sight[1] += 9 * 4 * -Engine::Input::Get::Wheel::V();
-
 	Camera.Set();
 
-	worldTime = (int)Engine::Time::Get::Elapsed();
+	std::vector<Image*>::iterator j = imageContainer.begin();
+	while (j != imageContainer.end())
+	{
+		if ((**j).update() != true)
+		{
+			delete(*j);
+			j = imageContainer.erase(j);
+		}
+		else
+		{
+			j = j + 1;
+		}
+	}
 
+	worldTime = (int)Engine::Time::Get::Elapsed();
+	
 	if (worldTime - (spawnTime * spawnCount) >= 0)
 	{
-		tileContainer.push_back(spawner->Spawn());
+		tileContainer.push_back(tileSpawner->Spawn());
 		spawnCount++;
 	}
 
@@ -73,7 +88,12 @@ void GameScreen::Update()
 
 	WorldTime.Render();
 	ScoreText.Render();
-	/*playScreen.Render();*/
+
+	if (PC.getState() == 4)
+	{
+		GameOver.Render();
+	}
+
 }
 
 void GameScreen::End()
@@ -84,4 +104,9 @@ void GameScreen::End()
 void GameScreen::Add(LongGround* targetTile)
 {
 	tileContainer.push_back(targetTile);
+}
+
+void GameScreen::Add(Image* Image)
+{
+	imageContainer.push_back(Image);
 }

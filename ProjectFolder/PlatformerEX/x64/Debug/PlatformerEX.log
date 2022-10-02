@@ -1,14 +1,13 @@
-﻿  Ground.cpp
-C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\PlatformerEX\Tile\Ground.cpp(13,116): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-Engine.lib(Circle.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Circle.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Engine.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Engine.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Entry.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Entry.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Input.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Input.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Physics.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Physics.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Pipeline.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Pipeline.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Point.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Point.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Quadrangle.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Quadrangle.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Rendering.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Rendering.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Resource.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Resource.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-Engine.lib(Time.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Time.obj)' 또는 'C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-  PlatformerEX.vcxproj -> C:\Users\Master\Desktop\ABC\PlatformerEX\ProjectFolder\x64\Debug\PlatformerEX.exe
+﻿  Player.cpp
+Engine.lib(Circle.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Circle.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Engine.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Engine.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Entry.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Entry.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Input.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Input.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Physics.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Physics.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Pipeline.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Pipeline.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Point.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Point.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Quadrangle.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Quadrangle.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Rendering.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Rendering.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Resource.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Resource.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+Engine.lib(Time.obj) : warning LNK4099: 'Engine.pdb' PDB를 'Engine.lib(Time.obj)' 또는 'C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\Engine.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  PlatformerEX.vcxproj -> C:\Users\user\Desktop\PlatformerEX\ProjectFolder\x64\Debug\PlatformerEX.exe

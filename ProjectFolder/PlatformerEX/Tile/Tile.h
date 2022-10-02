@@ -18,7 +18,6 @@ public:
 protected:
 	float const gravity = 9800.f;
 	Engine::Rendering::Image::Component tileSkin;
-	Engine::Rendering::Image::Component BodySkin;
 	Engine::Physics::Component<Quadrangle> Body;
 };
 

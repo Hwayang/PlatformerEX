@@ -6,24 +6,23 @@
 player::player()
 {
 	Skin.Length = { 270, 180 };
-	Skin.Location = { 0, 0 };
+	Skin.Location = { 0, -270 };
 	Skin.Duration = 0.5f;
 	Skin.Repeatable = true;
 	Skin.Flipped = false;
 
 	Body.Length = { 270, 180 };
-	Body.Center = { 0,0 };
+	Body.Center = { 0,-270 };
 }
 
 void player::stateChange()
 {
-
-	//동시키 입력 금지
-	//속도에 맞춰서 스프라이트 이동 구현할 수 있도록
-	//플립 기준이 중앙이 아닌 오른쪽 or 왼쪽을 기준으로 바뀜
-
 	//x축 이동방향에 맞춰 스프라이트의 플립 상태를 바꿔주는 코드
-	if (Engine::Input::Get::Key::Press(VK_LEFT))
+	if (Engine::Input::Get::Key::Press(VK_LEFT) and Engine::Input::Get::Key::Press(VK_RIGHT))
+	{
+		Skin.Flipped = Skin.Flipped;
+	}
+	else if (Engine::Input::Get::Key::Press(VK_LEFT))
 	{
 		Skin.Flipped = true;
 	}
@@ -33,25 +32,37 @@ void player::stateChange()
 	}
 
 	//점프 상태가 아니고, X키를눌렀을 때 점프 상태가 될 수 있도록
-	if (isJump != true and Engine::Input::Get::Key::Press('X'))
+	if (isGround == true)
 	{
-		isJump = true;
-		isGround = false;
-		gamestart = true;
+		if (Engine::Input::Get::Key::Press('X'))
+		{
+			gamestart = true;
+
+			if (isJump == false)
+			{
+				isJump = true;
+				isGround = false;
+			}
+		}
 	}
 
 	//각 상태 변경 조건에 맞게 상태를 바꿔주는 코드
-	if (isJump == true)
+	
+	if (Body.Center.y < -360)
+	{
+		state = state_::STATE_DEATH;
+	}
+	else if (isJump == true)
 	{
 		state = state_::STATE_JUMP;
+	}
+	else if (Engine::Input::Get::Key::Press(VK_LEFT) and Engine::Input::Get::Key::Press(VK_RIGHT))
+	{
+		state = state_::STATE_IDLE;
 	}
 	else if (Engine::Input::Get::Key::Press(VK_LEFT) or Engine::Input::Get::Key::Press(VK_RIGHT))
 	{
 		state = state_::STATE_MOVE;
-	}
-	else if (Body.Center.y < -360)
-	{
-		state = state_::STATE_DEATH;
 	}
 	else
 	{
@@ -90,7 +101,7 @@ void player::move(float const direction)
 	}
 	else if (state != state_::STATE_JUMP and gamestart == true)
 	{
-		Body.Center.y = Skin.Location[1] -= gravity / 100 * Engine::Time::Get::Delta();
+		Body.Center.y = Skin.Location[1] -= gravity / 10 * Engine::Time::Get::Delta();
 	}
 }
 

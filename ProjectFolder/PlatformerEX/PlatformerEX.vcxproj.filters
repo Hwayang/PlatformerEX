@@ -57,7 +57,13 @@
     <ClInclude Include="Tile\Tile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Spawner\Spawner.h">
+    <ClInclude Include="TileSpawner\TileSpawner.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSpawner\ImageSpawner.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\Image.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -83,7 +89,19 @@
     <ClCompile Include="Tile\Tile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Spawner\Spawner.cpp">
+    <ClCompile Include="TileSpawner\TileSpawner.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSpawner\ImageSpawner.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Image\TowerImage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Image\SkyImage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Image\Image.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

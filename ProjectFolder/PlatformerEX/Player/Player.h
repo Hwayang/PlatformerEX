@@ -28,7 +28,7 @@ private:
 	float moveSpeed = 500;
 
 	float const gravity = 9800.f/*1000px : 1m*/;
-	float jumpPower = 2500.f;
+	float jumpPower = 2150.f;
 
 	bool isJump = false;
 
